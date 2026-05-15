@@ -3,51 +3,46 @@ const today = new Date();
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<footer>
-	<div class="footer-inner">
-		<p class="copyright">
-			© {today.getFullYear()} 齐晓宁 · 与山鸡（我的 AI agent）协作整理
-		</p>
-		<div class="links">
+<footer class="site-footer">
+	<div class="wrap">
+		<p>© {today.getFullYear()} 齐晓宁 · 与山鸡（我的 AI agent）协作整理</p>
+		<p class="links">
 			<a href={`${BASE}/about/`}>关于</a>
-			<span class="sep">·</span>
+			<span>·</span>
 			<a href={`${BASE}/rss.xml`}>RSS</a>
-			<span class="sep">·</span>
+			<span>·</span>
 			<a href="https://github.com/hibernater/blog" target="_blank" rel="noopener">GitHub</a>
-		</div>
+		</p>
 	</div>
 </footer>
+
 <style>
-	footer {
-		padding: 2.5em 1em 3em;
-		background: linear-gradient(180deg, transparent, rgba(var(--gray-light), 0.5));
-		color: rgb(var(--gray));
-		text-align: center;
-		font-size: 0.9em;
-		margin-top: 3em;
+	.site-footer {
+		border-top: 1px solid #e8e8e8;
+		padding: 28px 0 42px;
+		margin-top: 42px;
+		color: #777;
+		font-size: 14px;
 	}
-	.footer-inner {
-		max-width: 760px;
+	.wrap {
+		max-width: 800px;
+		padding: 0 30px;
 		margin: 0 auto;
 	}
-	.copyright {
-		margin: 0 0 0.5em;
-	}
+	p { margin: 0 0 8px; }
 	.links {
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 0.6em;
+		gap: 8px;
 		flex-wrap: wrap;
 	}
-	.links a {
-		color: rgb(var(--gray));
+	a,
+	a:visited {
+		color: #2a7ae2;
+		text-decoration: none;
 		border-bottom: none;
 	}
-	.links a:hover {
-		color: var(--accent);
-	}
-	.sep {
-		color: rgb(var(--gray-light));
+	a:hover {
+		color: #000;
+		text-decoration: underline;
 	}
 </style>
