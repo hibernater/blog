@@ -32,22 +32,21 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 320px;
+	background: #fdfdfd;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 17px;
-	line-height: 1.75;
+	color: #333;
+	font-size: 16px;
+	line-height: 1.55;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 main {
-	width: 760px;
+	width: 860px;
 	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 2em 1em 3em;
+	padding: 1.7em 1em 3em;
 }
 
 h1, h2, h3, h4, h5, h6 {
