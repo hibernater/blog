@@ -3,6 +3,8 @@ title: "一次循证研究让我重新理解 Orchestrator+Worker"
 description: "起点是给妈妈做糖尿病循证研究，终点是想清楚了一个被很多人误用的 Agent 模式 — 裁剪 ≥ 调度。"
 pubDate: "2026-05-14"
 tags: ["agent-architecture", "orchestrator-worker", "case-study"]
+topic: "enterprise-agent-architecture"
+topicOrder: 4
 ---
 
 > 起点是给妈妈做糖尿病循证研究，终点是想清楚了一个被很多人误用的 Agent 模式。

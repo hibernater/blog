@@ -4,6 +4,8 @@ description: "从机器人仿真冷启动谈到开放业务系统、优化者诅
 pubDate: "2026-08-15"
 tags: ["AI前沿观察", "Agent", "仿真", "自我改进", "Context Engineering"]
 author: "齐晓宁"
+topic: "frontier"
+topicOrder: 2
 ---
 
 ## 一个我一直没想通的问题

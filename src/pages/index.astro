@@ -5,6 +5,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import TopicMap from '../components/TopicMap.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const posts = (await getCollection('blog')).sort(
@@ -93,6 +94,11 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 				font-size: 0.98rem;
 				line-height: 1.6;
 			}
+			.latest-heading {
+				margin: 0 0 1.2rem;
+				font-size: 1.3rem;
+				line-height: 1.4;
+			}
 		</style>
 	</head>
 	<body>
@@ -100,8 +106,10 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 		<main>
 			<section class="intro">
 				<h1>{SITE_TITLE}</h1>
-				<p>{SITE_DESCRIPTION}</p>
+				<p>{SITE_DESCRIPTION} 这里的文章沿着一条共同主线展开：从前沿信号，到企业 AI 的认知、系统架构与真实落地。</p>
 			</section>
+			<TopicMap compact />
+			<h2 class="latest-heading">最近发布</h2>
 			<ul class="post-list">
 				{
 					posts.map((post) => (

@@ -4,6 +4,8 @@ description: "从模型行动到企业可治理业务交易：为什么 Loop、H
 pubDate: "2026-08-16"
 tags: ["企业AI", "Agent", "EAPL", "协议层", "AI Business OS"]
 author: "齐晓宁"
+topic: "enterprise-agent-architecture"
+topicOrder: 1
 ---
 
 过去一年，几乎所有AI产品都在谈Agent。

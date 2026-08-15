@@ -4,6 +4,8 @@ description: "从插件容器、事件溯源 Session、极薄 Agent Loop、Tool 
 pubDate: "2026-08-15"
 tags: ["agent", "harness", "agent-runtime", "middleware", "deepseek"]
 author: "齐晓宁"
+topic: "frontier"
+topicOrder: 3
 ---
 
 本文沿着“Agent Runtime 是大模型时代的中间件”这一判断，进一步拆解 DeepSeek Harness 的真实架构：它怎样组织插件、状态、模型调用、工具执行、权限与多 Agent，以及这些设计预示着怎样的 Agent 架构演进。

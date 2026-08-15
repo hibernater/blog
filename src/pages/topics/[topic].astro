@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { TOPICS } from '../../data/topics';
+
+export function getStaticPaths() {
+	return TOPICS.map((topic) => ({ params: { topic: topic.id }, props: { topic } }));
+}
+
+const { topic } = Astro.props;
+const posts = (await getCollection('blog'))
+	.filter((post) => post.data.topic === topic.id)
+	.sort((a, b) => (a.data.topicOrder ?? 999) - (b.data.topicOrder ?? 999));
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<BaseHead title={topic.title} description={topic.description} />
+		<style define:vars={{ topicColor: topic.color }}>
+			main { max-width: 800px; margin: 0 auto; padding: 2.2rem 1rem 3rem; }
+			.back { display: inline-block; margin-bottom: 1.4rem; color: #666; font-size: .9rem; text-decoration: none; }
+			.back:hover { color: #111; }
+			.topic-header { padding-left: 1.2rem; border-left: 5px solid var(--topicColor); margin-bottom: 2rem; }
+			.topic-number { margin: 0 0 .25rem; color: var(--topicColor); font-size: .78rem; letter-spacing: .1em; font-weight: 700; }
+			.topic-header h1 { margin: 0 0 .55rem; font-size: 2rem; line-height: 1.3; }
+			.topic-header .desc { margin: 0 0 .6rem; color: #444; font-size: 1.05rem; }
+			.topic-header .question { margin: 0; color: #777; font-size: .92rem; line-height: 1.65; }
+			.section-title { margin: 2rem 0 1rem; font-size: 1.2rem; }
+			.post-list { list-style: none; margin: 0; padding: 0; counter-reset: post; }
+			.post-list li { counter-increment: post; display: grid; grid-template-columns: 32px 1fr; gap: .7rem; padding: 1rem 0; border-bottom: 1px solid #e8e8e8; }
+			.post-list li::before { content: counter(post, decimal-leading-zero); color: var(--topicColor); font-size: .76rem; font-weight: 700; padding-top: .2rem; }
+			.post-list a { color: inherit; text-decoration: none; }
+			.post-list a:hover h2 { color: var(--topicColor); }
+			.post-list h2 { margin: 0 0 .3rem; font-size: 1.08rem; line-height: 1.45; }
+			.post-list p { margin: 0 0 .35rem; color: #555; font-size: .9rem; line-height: 1.55; }
+			.meta { color: #888; font-size: .78rem; }
+			.empty { padding: 1rem; background: #f7f7f5; color: #666; border-radius: 6px; }
+			.upcoming { margin-top: 2.2rem; padding: 1.2rem 1.4rem; background: #f7f7f5; border-radius: 7px; }
+			.upcoming h2 { margin: 0 0 .7rem; font-size: 1rem; }
+			.upcoming ul { margin: 0; padding-left: 1.2rem; color: #666; font-size: .9rem; line-height: 1.8; }
+			.feedback { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px dashed #aaa; color: #666; font-size: .88rem; line-height: 1.65; }
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<a class="back" href={`${BASE}/topics/`}>← 返回专题地图</a>
+			<header class="topic-header">
+				<p class="topic-number">{topic.number} / 04</p>
+				<h1>{topic.title}</h1>
+				<p class="desc">{topic.description}</p>
+				<p class="question">核心问题：{topic.question}</p>
+			</header>
+
+			<h2 class="section-title">已发布文章</h2>
+			{
+				posts.length > 0 ? (
+					<ol class="post-list">
+						{posts.map((post) => (
+							<li>
+								<a href={`${BASE}/blog/${post.id}/`}>
+									<h2>{post.data.title}</h2>
+									{post.data.description && <p>{post.data.description}</p>}
+									<span class="meta"><FormattedDate date={post.data.pubDate} /></span>
+								</a>
+							</li>
+						))}
+					</ol>
+				) : (
+					<p class="empty">这一层的既有研究正在整理成文章。专题结构先保留，文章发布后会自动进入这里。</p>
+				)
+			}
+
+			<section class="upcoming">
+				<h2>正在整理</h2>
+				<ul>{topic.upcoming.map((title) => <li>{title}</li>)}</ul>
+			</section>
+
+			<p class="feedback">↻ 这不是单向漏斗。进入真实业务后，案例、ROI和运行结果会反过来验证并修正认知框架与系统架构。</p>
+		</main>
+		<Footer />
+	</body>
+</html>

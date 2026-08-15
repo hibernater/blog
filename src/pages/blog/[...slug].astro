@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { TOPIC_BY_ID, type TopicId } from '../../data/topics';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -13,8 +14,23 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const topicId = post.data.topic as TopicId | undefined;
+const topicInfo = topicId ? TOPIC_BY_ID[topicId] : undefined;
+const topicPosts = topicId
+	? (await getCollection('blog'))
+			.filter((item) => item.data.topic === topicId)
+			.sort((a, b) => (a.data.topicOrder ?? 999) - (b.data.topicOrder ?? 999))
+	: [];
+const topicIndex = topicPosts.findIndex((item) => item.id === post.id);
+const previousPost = topicIndex > 0 ? topicPosts[topicIndex - 1] : undefined;
+const nextPost = topicIndex >= 0 && topicIndex < topicPosts.length - 1 ? topicPosts[topicIndex + 1] : undefined;
 ---
 
-<BlogPost {...post.data}>
+<BlogPost
+	{...post.data}
+	{topicInfo}
+	previousPost={previousPost ? { id: previousPost.id, title: previousPost.data.title } : undefined}
+	nextPost={nextPost ? { id: nextPost.id, title: nextPost.data.title } : undefined}
+>
 	<Content />
 </BlogPost>

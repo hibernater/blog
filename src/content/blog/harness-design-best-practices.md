@@ -3,6 +3,8 @@ title: "Harness 设计：什么才是够用且不繁琐的工程规范"
 description: "从 Anthropic、Cursor、自研三方实践提炼 Harness 设计的 12 个原则 — 模型决定上限，Harness 决定下限。"
 pubDate: "2026-05-13"
 tags: ["harness", "agent-engineering", "best-practices"]
+topic: "enterprise-agent-architecture"
+topicOrder: 2
 ---
 
 > **v1.1 — 2026-05-13 增补 Anthropic 文章对照**

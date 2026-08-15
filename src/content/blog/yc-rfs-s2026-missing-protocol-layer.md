@@ -4,6 +4,8 @@ description: "回到 YC Summer 2026 RFS 一手原文，拆解企业 AI 叙事中
 pubDate: "2026-08-15"
 tags: ["AI前沿观察", "YC", "企业AI", "Agent", "协议层"]
 author: "齐晓宁"
+topic: "frontier"
+topicOrder: 1
 ---
 
 7月初，我在微信上刷到一条视频，标题大意是：

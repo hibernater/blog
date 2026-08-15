@@ -6,9 +6,17 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { tags?: string[] };
+type TopicInfo = { id: string; number: string; title: string; shortTitle: string; color: string };
+type PostLink = { id: string; title: string };
+type Props = CollectionEntry<'blog'>['data'] & {
+	tags?: string[];
+	topicInfo?: TopicInfo;
+	previousPost?: PostLink;
+	nextPost?: PostLink;
+};
 
-const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags, topicInfo, previousPost, nextPost } = Astro.props;
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <html lang="zh-CN">
@@ -66,6 +74,40 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 			.last-updated-on {
 				font-style: italic;
 			}
+			.topic-breadcrumb {
+				display: inline-flex;
+				align-items: center;
+				gap: .5rem;
+				margin: .8rem 0 0;
+				padding: .3rem .6rem;
+				border-left: 3px solid var(--topic-color);
+				background: #f7f7f5;
+				color: #555;
+				font-size: .8rem;
+				text-decoration: none;
+			}
+			.topic-breadcrumb:hover { color: #111; }
+			.series-nav {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1rem;
+				margin-top: 2.8rem;
+				padding-top: 1.4rem;
+				border-top: 1px solid #e8e8e8;
+			}
+			.series-link {
+				display: block;
+				padding: .85rem 1rem;
+				background: #f7f7f5;
+				color: #333;
+				text-decoration: none;
+				border-radius: 5px;
+				font-size: .88rem;
+				line-height: 1.5;
+			}
+			.series-link.next { text-align: right; grid-column: 2; }
+			.series-label { display: block; margin-bottom: .2rem; color: #888; font-size: .75rem; }
+			.series-link:hover { background: #efefeb; }
 
 			/* === 正文排版 (核心) === */
 			.prose {
@@ -207,6 +249,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 					line-height: 1.65;
 				}
 				.prose h2 { font-size: 1.28em; }
+				.series-nav { grid-template-columns: 1fr; }
+				.series-link.next { grid-column: 1; text-align: left; }
 			}
 		</style>
 	</head>
@@ -219,6 +263,15 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 					<div class="hero-image">
 						<Image width={1020} height={510} src={heroImage} alt="" />
 					</div>
+				)}
+				{topicInfo && (
+					<a
+						class="topic-breadcrumb"
+						href={`${BASE}/topics/${topicInfo.id}/`}
+						style={`--topic-color:${topicInfo.color}`}
+					>
+						{topicInfo.number} / 04 · {topicInfo.title}
+					</a>
 				)}
 				<header class="post-header">
 					<h1>{title}</h1>
@@ -239,6 +292,22 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 				<div class="prose">
 					<slot />
 				</div>
+				{topicInfo && (previousPost || nextPost) && (
+					<nav class="series-nav" aria-label="同专题文章导航">
+						{previousPost && (
+							<a class="series-link" href={`${BASE}/blog/${previousPost.id}/`}>
+								<span class="series-label">← 同专题上一篇</span>
+								{previousPost.title}
+							</a>
+						)}
+						{nextPost && (
+							<a class="series-link next" href={`${BASE}/blog/${nextPost.id}/`}>
+								<span class="series-label">同专题下一篇 →</span>
+								{nextPost.title}
+							</a>
+						)}
+					</nav>
+				)}
 			</article>
 		</main>
 		<Footer />
