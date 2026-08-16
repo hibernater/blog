@@ -19,7 +19,7 @@ export const TOPICS = [
 		description: '发现外部信号、争议和反例。',
 		question: '外部世界正在发生什么？哪些变化值得进入我们的判断系统？',
 		color: '#4263a8',
-		upcoming: ['Agent-ready B2B：当购买者从人变成 Agent'],
+		upcoming: [],
 	},
 	{
 		id: 'enterprise-ai-foundations',
@@ -30,7 +30,7 @@ export const TOPICS = [
 		description: '定义什么是企业 AI、六要素和总体地图。',
 		question: '企业 AI 到底是什么？怎样才算从工具使用走向业务系统？',
 		color: '#7c4d9e',
-		upcoming: ['企业 AI 总图：理解、规划、执行与自迭代'],
+		upcoming: [],
 	},
 	{
 		id: 'enterprise-agent-architecture',
