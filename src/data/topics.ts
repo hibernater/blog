@@ -8,7 +8,7 @@ export const TOPICS = [
 		description: '记录私人 Agent、第二大脑与认知系统如何共同演化。',
 		question: 'AI 如何从任务助手变成持续理解我、补全我并与我共同演化的个人系统？',
 		color: '#9b3f62',
-		upcoming: ['个人 Agent 的长期记忆如何设计', '第二大脑如何从知识库走向认知伙伴'],
+		upcoming: ['它真的进化了吗：个人 AI 系统阶段复盘'],
 	},
 	{
 		id: 'frontier',
