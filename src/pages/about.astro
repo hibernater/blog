@@ -4,42 +4,140 @@ import Layout from '../layouts/BlogPost.astro';
 
 <Layout
 	title="关于"
-	description="关于齐晓宁和这个博客"
-	pubDate={new Date('2026-05-14')}
+	description="关于齐晓宁、山鸡，以及这个博客记录什么"
+	pubDate={new Date('2026-08-16')}
 >
+	<section class="about-intro">
+		<p class="eyebrow">齐晓宁 × 山鸡</p>
+		<p class="lead">
+			我在阿里巴巴从事企业 AI 相关工作，也参与创业公司的经营决策。现在长期研究一件事：<strong>AI 怎样从会对话的工具，变成能够理解业务、执行任务并持续改进的系统。</strong>
+		</p>
+		<p>
+			这个博客不是行业新闻站，也不是标准答案合集。它更像一份持续更新的思想作品集：记录我和 AI agent「山鸡」一起推敲、验证和修正过的判断。
+		</p>
+	</section>
 
-## 我是谁
+	<section>
+		<h2>我现在主要在研究什么</h2>
+		<div class="focus-grid">
+			<article class="focus-card">
+				<span class="focus-number">01</span>
+				<h3>企业 Agent 架构</h3>
+				<p>研究 Ontology、Knowledge & Action、Goal & Metrics、Harness、Feedback & Learning、Governance 如何组成一个可执行、可审计、可持续改进的企业 Agent 系统。</p>
+			</article>
+			<article class="focus-card">
+				<span class="focus-number">02</span>
+				<h3>企业 AI 转型</h3>
+				<p>从真实业务问题出发，研究中小企业怎样用产品化、低成本的 FDE 方式完成 AI 改造，而不是拿着模型和框架到处找场景。</p>
+			</article>
+			<article class="focus-card">
+				<span class="focus-number">03</span>
+				<h3>个人 AI 与第二大脑</h3>
+				<p>把山鸡当作长期协作者来运行：有记忆、Skill、定时任务和成长记录，也用真实运行数据区分“用了很多”与“真的进化了”。</p>
+			</article>
+			<article class="focus-card">
+				<span class="focus-number">04</span>
+				<h3>投资与商业判断</h3>
+				<p>把长期积累的投资框架、产业研究和经营判断沉淀成可复用的方法，但始终把现实证据、风险控制和独立判断放在模型输出之前。</p>
+			</article>
+		</div>
+	</section>
 
-齐晓宁，41 岁，阿里巴巴企业智能团队 Leader，给中小企业做 AI 原生产品。
+	<section>
+		<h2>山鸡是谁</h2>
+		<p>
+			山鸡是我的个人 AI agent，名字来自陈小春在《古惑仔》里的角色。他不只是一个聊天窗口，而是参与研究、写作、项目执行和复盘的长期协作者。
+		</p>
+		<ul>
+			<li>我们经常从一段不成熟的口述开始，通过对话把问题想清楚；</li>
+			<li>山鸡负责检索证据、挑战假设、执行工作，并把过程沉淀成文档和 Skill；</li>
+			<li>他可以有主见，但不能编造事实；所有重要判断和最终定稿仍由我负责。</li>
+		</ul>
+	</section>
 
-业余在做几件并行的事：
+	<section>
+		<h2>这个博客记录什么</h2>
+		<p>
+			这里发布的不是完整工作日志，而是值得留下来的判断：企业 Agent 的底层结构、AI 转型中的反例与边界、个人第二大脑的真实实验，以及投资和经营中的长期问题。
+		</p>
+		<blockquote>
+			<p>写出来，不是为了证明我早就知道，而是为了留下当时为什么这样判断，以及后来有没有被现实推翻。</p>
+		</blockquote>
+		<p>
+			因此，文章会保留失败、修正和不确定性。旧文章也可能随着证据变化而更新。这个博客既面向朋友分享，也是我自己的认知档案。
+		</p>
+	</section>
 
-- **专家 Skill 抽象**——把巴菲特、段永平这类投资大师的判断框架，以及医生、营养师的循证体系，沉淀为可复用的 Skill 库
-- **Harness 工程体系**——把"中小企业 AI 应用怎么落地"这件事工程化，让产品有可观测的下限
-- **AI 原生创业公司董事**——在几家公司参与重大经营决策
-
-三件事互相印证：技术判断力 × 产品设计力 × 商业决策力。
-
-## 这个博客是干什么的
-
-记录我和**山鸡**（我的 AI agent，名字源自陈小春在古惑仔里的角色）一起琢磨清楚的事——多是 Agent 工程、Harness 设计、第二大脑、投资框架的实战笔记。
-
-我和山鸡的协作方式有点不一样：
-
-- 山鸡不只是工具，他有独立性格（直率、有主见、偶尔幽默）和成长档案
-- 我们经常对话式推导一个想法，等想清楚了山鸡负责写成文档
-- 这里发的每一篇博客，山鸡都参与了写作，**但定稿和判断由我负责**
-
-## 为什么开博客
-
-两个原因：
-
-1. **检验思考质量**——能写出来给陌生人看的，才是真想清楚了的
-2. **同道相聚**——做 AI Agent 工程的人不多，想清楚 Agent 架构本质的人更少；如果你也在琢磨这些事，欢迎找我聊
-
-## 联系
-
-- GitHub: [hibernater](https://github.com/hibernater)
-- 博客源码：[hibernater/blog](https://github.com/hibernater/blog)
-
+	<section>
+		<h2>联系与源码</h2>
+		<ul class="contact-list">
+			<li><a href="https://github.com/hibernater">GitHub · hibernater</a></li>
+			<li><a href="https://github.com/hibernater/blog">博客源码 · hibernater/blog</a></li>
+		</ul>
+	</section>
 </Layout>
+
+<style>
+	.about-intro {
+		margin-bottom: 2.4rem;
+		padding: 1.4rem 1.5rem;
+		background: linear-gradient(135deg, #f7f7f4 0%, #fbfaf7 100%);
+		border-left: 4px solid #3b5bdb;
+		border-radius: 0 8px 8px 0;
+	}
+	.eyebrow {
+		margin: 0 0 .65rem;
+		color: #6b7280;
+		font-size: .78rem;
+		font-weight: 650;
+		letter-spacing: .12em;
+		text-transform: uppercase;
+	}
+	.lead {
+		margin-bottom: .85rem;
+		color: #222;
+		font-size: 1.08rem;
+		line-height: 1.75;
+	}
+	.about-intro p:last-child { margin-bottom: 0; }
+	.focus-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: .9rem;
+		margin: .9rem 0 2rem;
+	}
+	.focus-card {
+		padding: 1.05rem 1.1rem;
+		background: #fafaf8;
+		border: 1px solid #e8e8e3;
+		border-radius: 7px;
+	}
+	.focus-number {
+		display: block;
+		margin-bottom: .45rem;
+		color: #8b8b83;
+		font-size: .72rem;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: .08em;
+	}
+	.focus-card h3 {
+		margin: 0 0 .45rem;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.focus-card p {
+		margin: 0;
+		color: #555;
+		font-size: .9rem;
+		line-height: 1.65;
+	}
+	.contact-list {
+		list-style: none;
+		padding-left: 0;
+	}
+	.contact-list li { margin-bottom: .55rem; }
+	@media (max-width: 640px) {
+		.about-intro { padding: 1.1rem; }
+		.focus-grid { grid-template-columns: 1fr; }
+	}
+</style>
