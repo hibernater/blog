@@ -6,7 +6,8 @@ const { compact = false } = Astro.props;
 const posts = await getCollection('blog');
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 const personalTopics = TOPICS.filter((topic) => topic.track === 'personal');
-const enterpriseTopics = TOPICS.filter((topic) => topic.track === 'enterprise');
+const frontierTopic = TOPICS.find((topic) => topic.id === 'frontier');
+const enterpriseTopics = TOPICS.filter((topic) => topic.track === 'enterprise' && topic.id !== 'frontier');
 ---
 
 <section class:list={['topic-map', { compact }]} aria-labelledby="topic-map-title">
@@ -46,9 +47,22 @@ const enterpriseTopics = TOPICS.filter((topic) => topic.track === 'enterprise');
 			<span class="track-mark">企业</span>
 			<div>
 				<h3 id="enterprise-track-title">企业 AI 主线</h3>
-				<p>从前沿信号、认知框架和系统架构，一直走到真实业务结果。</p>
+				<p>从认知框架和系统架构走到真实业务结果；前沿观察作为旁支持续输入反例。</p>
 			</div>
 		</header>
+		{frontierTopic && (
+			<div class="signal-lane">
+				<span class="signal-label">旁支输入 · 持续修正主线</span>
+				<a class="topic-card signal-card" href={`${BASE}/topics/${frontierTopic.id}/`} style={`--topic-color:${frontierTopic.color}`}>
+					<span class="topic-number">{frontierTopic.number}</span>
+					<div>
+						<h3>{frontierTopic.title}</h3>
+						<p>{frontierTopic.description}</p>
+						<span class="topic-count">{posts.filter((post) => post.data.topic === frontierTopic.id).length} 篇已发布</span>
+					</div>
+				</a>
+			</div>
+		)}
 		<div class="topic-flow">
 			{enterpriseTopics.map((topic, index) => {
 				const count = posts.filter((post) => post.data.topic === topic.id).length;
@@ -93,6 +107,9 @@ const enterpriseTopics = TOPICS.filter((topic) => topic.track === 'enterprise');
 	.track-mark { flex: 0 0 auto; padding: 0.15rem 0.45rem; border: 1px solid #aaa; border-radius: 3px; color: #555; font-size: 0.72rem; font-weight: 700; }
 	.personal-track .track-mark { border-color: #9b3f62; color: #9b3f62; }
 	.enterprise-track .track-mark { border-color: #4263a8; color: #4263a8; }
+	.signal-lane { margin: 0 0 1rem 2.3rem; padding: 0.75rem 0 0.75rem 1rem; border-left: 1px dashed #9aa7c6; }
+	.signal-label { display: block; margin-bottom: 0.45rem; color: #4263a8; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; }
+	.signal-card { max-width: 86%; background: #f7f9ff; }
 	.topic-flow { display: grid; gap: 0; }
 	.topic-card {
 		display: grid;
@@ -120,5 +137,7 @@ const enterpriseTopics = TOPICS.filter((topic) => topic.track === 'enterprise');
 		.topic-map { padding: 1.25rem; margin: 1.8rem 0 2.2rem; }
 		.map-header h2 { font-size: 1.35rem; }
 		.topic-card { grid-template-columns: 34px 1fr; padding: 0.9rem; }
+		.signal-lane { margin-left: 0; padding-left: 0.7rem; }
+		.signal-card { max-width: none; }
 	}
 </style>
