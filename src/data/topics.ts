@@ -41,7 +41,7 @@ export const TOPICS = [
 		description: '解释理解、规划、执行、治理和自迭代如何运行。',
 		question: '企业如何把理解、规划、执行与自反馈真正连成可靠系统？',
 		color: '#187f76',
-		upcoming: ['企业 AI 不是所有问题都该让 Agent 主控', '长程 Agent 的可靠性，不是上下文够不够长', '企业 Agent 如何真正自我进化'],
+		upcoming: [],
 	},
 	{
 		id: 'enterprise-ai-implementation',
