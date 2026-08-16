@@ -52,7 +52,7 @@ export const TOPICS = [
 		description: '解释最小闭环、ROI、轻量 FDE 和规模化复制。',
 		question: '如何从第一条真实业务闭环开始，证明价值并逐步复制？',
 		color: '#ad6425',
-		upcoming: ['轻量 FDE 怎么成立', '一家跨境供应链公司如何选择第一条 AI 业务闭环', '跨境履约 Agent 工作台与 Business OS 参考架构'],
+		upcoming: [],
 	},
 ] as const;
 
