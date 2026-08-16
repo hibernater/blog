@@ -4,6 +4,10 @@ description: "判断企业 AI 转型，不只看部署了多少工具，而看�
 pubDate: "2026-08-16"
 tags: ["企业AI", "AI转型", "Agent", "业务主语", "组织变革"]
 author: "齐晓宁"
+originType: "综合提炼"
+originNote: "从企业 AI 三阶段框架中抽取“业务主语迁移”，重写成逐业务流诊断文章；不是源文件的直接公开版。"
+originSources:
+  - "《企业 AI 转型三阶段：从 Copilot 到 Agent Workflow，再到 AI 原生业务操作系统》（2026-07-08）"
 topic: "enterprise-ai-foundations"
 topicOrder: 1
 ---

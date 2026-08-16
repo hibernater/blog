@@ -4,6 +4,12 @@ description: "山鸡从任务助手升级为主动认知补全系统的一周：
 pubDate: "2026-05-15"
 tags: ["山鸡", "第二大脑", "agent", "认知系统", "Hermes"]
 author: "齐晓宁"
+originType: "原文发布"
+originNote: "由一周真实工作的复盘形成，记录山鸡从任务助手向主动认知补全系统演化的阶段状态。"
+originSources:
+  - "《山鸡周报：从任务助手到主动认知补全系统》（2026-05-15）"
+topic: "personal-ai"
+topicOrder: 3
 ---
 
 > **周期**：2026-05-09 ~ 2026-05-15  

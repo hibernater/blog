@@ -3,6 +3,10 @@ title: "Multi-Agent 架构演进：从自协调失败到 Orchestration 收敛"
 description: "为什么去中心化的 Agent Swarm 在真实场景下集体躺平？从 Cursor 实证教训说起，重新理解 Agent 编排的层级必要性。"
 pubDate: "2026-05-12"
 tags: ["agent-architecture", "multi-agent", "orchestration"]
+originType: "原文发布"
+originNote: "由真实项目中的多 Agent 自协调失败触发；公开版基本保留原始文章，只增加博客格式。"
+originSources:
+  - "《Multi-Agent 架构演进：从自协调失败到 Orchestration 收敛》原始 MD（2026-05-12）"
 topic: "enterprise-agent-architecture"
 topicOrder: 3
 ---

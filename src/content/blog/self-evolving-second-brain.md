@@ -3,6 +3,12 @@ title: "自进化第二大脑：从想法到 MVP"
 description: "六个 AI 角色 + 三层 wiki 沉淀机制 — 一套能自我进化的认知系统设计。"
 pubDate: "2026-05-12"
 tags: ["second-brain", "multi-agent", "system-design"]
+originType: "原文发布"
+originNote: "由“系统应主动发现我的认知缺口”这一原始设想展开；公开版保留触发原话和完整方案。"
+originSources:
+  - "《自进化第二大脑：从想法到 MVP》（2026-05-12）"
+topic: "personal-ai"
+topicOrder: 1
 ---
 
 > 整理自与山鸡的讨论，2026年5月12日

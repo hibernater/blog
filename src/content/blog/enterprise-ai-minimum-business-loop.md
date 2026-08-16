@@ -4,6 +4,10 @@ description: "企业 AI 落地不应先复制一张完整母架构，而应先�
 pubDate: "2026-08-16"
 tags: ["企业AI", "Agent落地", "最小闭环", "架构", "MVP"]
 author: "齐晓宁"
+originType: "综合提炼"
+originNote: "从长篇场景化架构附录中抽取“最小闭环”和“复杂度触发升级”，形成独立方法论文章。"
+originSources:
+  - "《企业 AI 场景化最小闭环与规模化演进架构 v0.2》（2026-07-22）"
 topic: "enterprise-ai-implementation"
 topicOrder: 1
 ---

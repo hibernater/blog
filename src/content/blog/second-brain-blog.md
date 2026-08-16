@@ -3,6 +3,12 @@ title: "第二大脑：从想法到 MVP"
 description: "搭建个人知识管理系统的实践笔记 — wiki 分层、跨设备同步、AI agent 协作。"
 pubDate: "2026-05-13"
 tags: ["second-brain", "知识管理", "wiki"]
+originType: "原文发布"
+originNote: "记录第二大脑从知识收纳走向主动认知系统的原始架构思考；正文基本保留。"
+originSources:
+  - "《第二大脑：从想法到 MVP》（2026-05-13）"
+topic: "personal-ai"
+topicOrder: 2
 ---
 
 > 这篇文章记录了我用 Hermes + LLM Wiki + Obsidian 搭建第二大脑的完整思路和实践。不是工具教程，是一套架构。

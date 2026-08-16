@@ -3,6 +3,10 @@ title: "企业级 Agent 方案：产品架构、组织架构与组织演进"
 description: "企业级 Agent 不是聊天助手，而是让业务对象、经营事件、Business Skill、Agent 责任、权限审计与复盘学习组成可运行的 Agent OS。"
 pubDate: "2026-06-08"
 tags: ["enterprise-agent", "agent-os", "organization", "ai-transformation"]
+originType: "原文发布"
+originNote: "原方案稿直接发布，只增加博客元数据和专题顺序，正文结构与论证基本未改。"
+originSources:
+  - "《企业级 Agent 方案：产品架构、组织架构与组织演进》（2026-06-08）"
 topic: "enterprise-ai-foundations"
 topicOrder: 2
 ---

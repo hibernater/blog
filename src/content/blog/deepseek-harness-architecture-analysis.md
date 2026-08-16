@@ -4,6 +4,10 @@ description: "从插件容器、事件溯源 Session、极薄 Agent Loop、Tool 
 pubDate: "2026-08-15"
 tags: ["agent", "harness", "agent-runtime", "middleware", "deepseek"]
 author: "齐晓宁"
+originType: "原文发布"
+originNote: "围绕 DeepSeek Harness 源码验证 Agent Runtime 的架构判断；公开版仅适配标题、元数据和少量表达。"
+originSources:
+  - "《DeepSeek Harness 架构分析》（2026-08-15）"
 topic: "frontier"
 topicOrder: 3
 ---

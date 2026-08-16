@@ -5,18 +5,52 @@ import { TOPICS } from '../data/topics';
 const { compact = false } = Astro.props;
 const posts = await getCollection('blog');
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+const personalTopics = TOPICS.filter((topic) => topic.track === 'personal');
+const enterpriseTopics = TOPICS.filter((topic) => topic.track === 'enterprise');
 ---
 
 <section class:list={['topic-map', { compact }]} aria-labelledby="topic-map-title">
 	<header class="map-header">
 		<p class="eyebrow">BLOG KNOWLEDGE MAP</p>
-		<h2 id="topic-map-title">从前沿信号到真实业务结果</h2>
-		<p>四个专题不是平行栏目，而是一条不断被真实案例校正的研究链路。</p>
+		<h2 id="topic-map-title">个人 AI 与企业 AI：两条长期主线</h2>
+		<p>一条记录个人如何与 AI 共同演化；一条追踪企业 AI 从外部信号走向真实业务结果。</p>
 	</header>
 
-	<div class="topic-flow">
-		{
-			TOPICS.map((topic, index) => {
+	<section class="track-block personal-track" aria-labelledby="personal-track-title">
+		<header class="track-header">
+			<span class="track-mark">个人</span>
+			<div>
+				<h3 id="personal-track-title">个人 AI 主线</h3>
+				<p>私人 Agent、第二大脑与认知系统的持续演化。</p>
+			</div>
+		</header>
+		<div class="topic-flow">
+			{personalTopics.map((topic) => {
+				const count = posts.filter((post) => post.data.topic === topic.id).length;
+				return (
+					<a class="topic-card" href={`${BASE}/topics/${topic.id}/`} style={`--topic-color:${topic.color}`}>
+						<span class="topic-number">{topic.number}</span>
+						<div>
+							<h3>{topic.title}</h3>
+							<p>{topic.description}</p>
+							<span class="topic-count">{count > 0 ? `${count} 篇已发布` : '研究正在整理'}</span>
+						</div>
+					</a>
+				);
+			})}
+		</div>
+	</section>
+
+	<section class="track-block enterprise-track" aria-labelledby="enterprise-track-title">
+		<header class="track-header">
+			<span class="track-mark">企业</span>
+			<div>
+				<h3 id="enterprise-track-title">企业 AI 主线</h3>
+				<p>从前沿信号、认知框架和系统架构，一直走到真实业务结果。</p>
+			</div>
+		</header>
+		<div class="topic-flow">
+			{enterpriseTopics.map((topic, index) => {
 				const count = posts.filter((post) => post.data.topic === topic.id).length;
 				return (
 					<>
@@ -28,17 +62,16 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 								<span class="topic-count">{count > 0 ? `${count} 篇已发布` : '研究正在整理'}</span>
 							</div>
 						</a>
-						{index < TOPICS.length - 1 && <div class="flow-arrow" aria-hidden="true">↓</div>}
+						{index < enterpriseTopics.length - 1 && <div class="flow-arrow" aria-hidden="true">↓</div>}
 					</>
 				);
-			})
-		}
-	</div>
-
-	<a class="feedback-loop" href={`${BASE}/topics/enterprise-ai-implementation/`}>
-		<span class="loop-icon">↻</span>
-		<span><strong>反馈回路：</strong>真实案例和业务结果，反过来验证并修正前面的认知框架与系统架构。</span>
-	</a>
+			})}
+		</div>
+		<a class="feedback-loop" href={`${BASE}/topics/enterprise-ai-implementation/`}>
+			<span class="loop-icon">↻</span>
+			<span><strong>反馈回路：</strong>真实案例和业务结果，反过来验证并修正前面的认知框架与系统架构。</span>
+		</a>
+	</section>
 </section>
 
 <style>
@@ -49,16 +82,17 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 		border: 1px solid #e5e3dc;
 		border-radius: 10px;
 	}
-	.map-header { margin-bottom: 1.5rem; }
-	.eyebrow {
-		margin: 0 0 0.35rem;
-		font-size: 0.72rem;
-		font-weight: 700;
-		letter-spacing: 0.13em;
-		color: #777;
-	}
+	.map-header { margin-bottom: 1.6rem; }
+	.eyebrow { margin: 0 0 0.35rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.13em; color: #777; }
 	.map-header h2 { margin: 0 0 0.55rem; font-size: 1.55rem; line-height: 1.35; }
-	.map-header > p:last-child { margin: 0; color: #666; font-size: 0.95rem; }
+	.map-header > p:last-child { margin: 0; color: #666; font-size: 0.95rem; line-height: 1.6; }
+	.track-block + .track-block { margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px solid #dedbd3; }
+	.track-header { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 0.85rem; }
+	.track-header h3 { margin: 0 0 0.15rem; font-size: 1.05rem; }
+	.track-header p { margin: 0; color: #666; font-size: 0.86rem; line-height: 1.5; }
+	.track-mark { flex: 0 0 auto; padding: 0.15rem 0.45rem; border: 1px solid #aaa; border-radius: 3px; color: #555; font-size: 0.72rem; font-weight: 700; }
+	.personal-track .track-mark { border-color: #9b3f62; color: #9b3f62; }
+	.enterprise-track .track-mark { border-color: #4263a8; color: #4263a8; }
 	.topic-flow { display: grid; gap: 0; }
 	.topic-card {
 		display: grid;
@@ -78,19 +112,7 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 	.topic-card p { margin: 0 0 0.35rem; color: #555; font-size: 0.9rem; line-height: 1.55; }
 	.topic-count { color: var(--topic-color); font-size: 0.78rem; font-weight: 600; }
 	.flow-arrow { height: 26px; line-height: 26px; text-align: center; color: #999; font-size: 1.05rem; }
-	.feedback-loop {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		margin-top: 1rem;
-		padding: 0.8rem 1rem;
-		border: 1px dashed #aaa;
-		border-radius: 6px;
-		color: #555;
-		font-size: 0.88rem;
-		line-height: 1.55;
-		text-decoration: none;
-	}
+	.feedback-loop { display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; padding: 0.8rem 1rem; border: 1px dashed #aaa; border-radius: 6px; color: #555; font-size: 0.88rem; line-height: 1.55; text-decoration: none; }
 	.feedback-loop:hover { border-color: #555; color: #222; }
 	.loop-icon { font-size: 1.45rem; color: #ad6425; }
 	.compact { margin-top: 2rem; }

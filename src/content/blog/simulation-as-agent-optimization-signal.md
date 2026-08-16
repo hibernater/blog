@@ -4,6 +4,10 @@ description: "从机器人仿真冷启动谈到开放业务系统、优化者诅
 pubDate: "2026-08-15"
 tags: ["AI前沿观察", "Agent", "仿真", "自我改进", "Context Engineering"]
 author: "齐晓宁"
+originType: "轻编辑"
+originNote: "保留关于业务仿真与优化信号的原始争论，补充公开证据并校正技术表述。"
+originSources:
+  - "《仿真能造出 Agent 的“优化信号”吗——一场关于范式的争论》原始讨论稿（2026-08）"
 topic: "frontier"
 topicOrder: 2
 ---

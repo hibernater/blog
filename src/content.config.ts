@@ -13,8 +13,12 @@ const blog = defineCollection({
 			heroImage: z.optional(image()),
 			tags: z.array(z.string()).default([]),
 			author: z.string().default('齐晓宁'),
+			originType: z.enum(['原文发布', '轻编辑', '综合提炼']),
+			originNote: z.string(),
+			originSources: z.array(z.string()).min(1),
 			topic: z
 				.enum([
+					'personal-ai',
 					'frontier',
 					'enterprise-ai-foundations',
 					'enterprise-agent-architecture',

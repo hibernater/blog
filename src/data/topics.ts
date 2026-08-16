@@ -1,7 +1,19 @@
 export const TOPICS = [
 	{
+		id: 'personal-ai',
+		number: 'P1',
+		track: 'personal',
+		title: '个人 AI 与第二大脑',
+		shortTitle: '个人 AI',
+		description: '记录私人 Agent、第二大脑与认知系统如何共同演化。',
+		question: 'AI 如何从任务助手变成持续理解我、补全我并与我共同演化的个人系统？',
+		color: '#9b3f62',
+		upcoming: ['个人 Agent 的长期记忆如何设计', '第二大脑如何从知识库走向认知伙伴'],
+	},
+	{
 		id: 'frontier',
 		number: '01',
+		track: 'enterprise',
 		title: 'AI 前沿观察',
 		shortTitle: '前沿观察',
 		description: '发现外部信号、争议和反例。',
@@ -12,6 +24,7 @@ export const TOPICS = [
 	{
 		id: 'enterprise-ai-foundations',
 		number: '02',
+		track: 'enterprise',
 		title: '企业 AI 认知框架',
 		shortTitle: '认知框架',
 		description: '定义什么是企业 AI、六要素和总体地图。',
@@ -22,6 +35,7 @@ export const TOPICS = [
 	{
 		id: 'enterprise-agent-architecture',
 		number: '03',
+		track: 'enterprise',
 		title: '企业 Agent 系统架构',
 		shortTitle: '系统架构',
 		description: '解释理解、规划、执行、治理和自迭代如何运行。',
@@ -32,6 +46,7 @@ export const TOPICS = [
 	{
 		id: 'enterprise-ai-implementation',
 		number: '04',
+		track: 'enterprise',
 		title: '企业 AI 落地与执行',
 		shortTitle: '落地与执行',
 		description: '解释最小闭环、ROI、轻量 FDE 和规模化复制。',

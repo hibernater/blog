@@ -4,6 +4,11 @@ description: "从模型行动到企业可治理业务交易：为什么 Loop、H
 pubDate: "2026-08-16"
 tags: ["企业AI", "Agent", "EAPL", "协议层", "AI Business OS"]
 author: "齐晓宁"
+originType: "综合提炼"
+originNote: "以 EAPL 博客稿为主，结合理论论文和公开证据，收窄成“业务行动契约层”这一命题。"
+originSources:
+  - "《企业级 Agent 真正缺的不是 Loop，而是协议层》博客稿（2026-07-03）"
+  - "《企业级 Agent 协议层》理论论文初稿（2026-07-03）"
 topic: "enterprise-agent-architecture"
 topicOrder: 1
 ---

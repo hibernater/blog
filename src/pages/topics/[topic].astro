@@ -51,7 +51,7 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 		<main>
 			<a class="back" href={`${BASE}/topics/`}>← 返回专题地图</a>
 			<header class="topic-header">
-				<p class="topic-number">{topic.number} / 04</p>
+				<p class="topic-number">{topic.number} · {topic.track === 'personal' ? '个人 AI 主线' : '企业 AI 主线'}</p>
 				<h1>{topic.title}</h1>
 				<p class="desc">{topic.description}</p>
 				<p class="question">核心问题：{topic.question}</p>
@@ -81,7 +81,7 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 				<ul>{topic.upcoming.map((title) => <li>{title}</li>)}</ul>
 			</section>
 
-			<p class="feedback">↻ 这不是单向漏斗。进入真实业务后，案例、ROI和运行结果会反过来验证并修正认知框架与系统架构。</p>
+			{topic.track === 'enterprise' && <p class="feedback">↻ 这不是单向漏斗。进入真实业务后，案例、ROI和运行结果会反过来验证并修正认知框架与系统架构。</p>}
 		</main>
 		<Footer />
 	</body>

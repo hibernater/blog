@@ -4,6 +4,10 @@ description: "回到 YC Summer 2026 RFS 一手原文，拆解企业 AI 叙事中
 pubDate: "2026-08-15"
 tags: ["AI前沿观察", "YC", "企业AI", "Agent", "协议层"]
 author: "齐晓宁"
+originType: "轻编辑"
+originNote: "由一篇二手视频引发的判断稿发展而来；发布时回到 YC 一手原文核验并补充证据。"
+originSources:
+  - "《YC 把地图画到了哪里，又漏了什么》原始判断稿（2026-08）"
 topic: "frontier"
 topicOrder: 1
 ---
