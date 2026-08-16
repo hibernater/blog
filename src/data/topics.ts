@@ -17,7 +17,7 @@ export const TOPICS = [
 		description: '定义什么是企业 AI、六要素和总体地图。',
 		question: '企业 AI 到底是什么？怎样才算从工具使用走向业务系统？',
 		color: '#7c4d9e',
-		upcoming: ['企业 AI 转型的真正指标：谁在成为业务主语', '从业务助理到业务操作系统：六要素', '企业 AI 总图：理解、规划、执行与自迭代'],
+		upcoming: ['从业务助理到业务操作系统：六要素', '企业 AI 总图：理解、规划、执行与自迭代', 'AI Business OS 与 ERP、Workflow、BPM、Agent Framework 的边界'],
 	},
 	{
 		id: 'enterprise-agent-architecture',
@@ -37,7 +37,7 @@ export const TOPICS = [
 		description: '解释最小闭环、ROI、轻量 FDE 和规模化复制。',
 		question: '如何从第一条真实业务闭环开始，证明价值并逐步复制？',
 		color: '#ad6425',
-		upcoming: ['从一条场景最小闭环开始', '企业 AI 的 ROI 应该怎么算', '轻量 FDE 不是把顾问卖便宜，而是把交付变成产品'],
+		upcoming: ['企业 AI 的 ROI 应该怎么算', '中小企业为什么不能从工具清单开始', '轻量 FDE 不是把顾问卖便宜，而是把交付变成产品'],
 	},
 ] as const;
 

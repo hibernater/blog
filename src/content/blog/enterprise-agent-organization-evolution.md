@@ -4,7 +4,7 @@ description: "企业级 Agent 不是聊天助手，而是让业务对象、经�
 pubDate: "2026-06-08"
 tags: ["enterprise-agent", "agent-os", "organization", "ai-transformation"]
 topic: "enterprise-ai-foundations"
-topicOrder: 1
+topicOrder: 2
 ---
 
 > 2026-06-08  
